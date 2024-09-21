@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		body {
+			background-COLOR: #FFFFFF;
+		}
+
+		.example-wrapper {
+			margin: 1em auto 1em 350px;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 5px;
+		}
+
+		.content-table {
+			border-spacing: 0;
+			margin: 25px 0;
+			font-size: 0.9em;
+			border-radius: 5px 5px 0 0;
+		}
+
+		.content-table thead tr {
+			background-color: #099879;
+			color: #ffffff;
+			text-align: left;
+			font-weight: bold;
+		}
+
+		.content-table th,
+		.content-table td {
+			padding: 12px 15px;
+				border-style: groove;
+		}
+
+		.content-table td {
+		
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>{{ cart }}! ✅</h1>
+
+		<table class="content-table">
+			<thead>
+				<tr>
+					<th>number of cart items</th>
+					<th>each price</th>
+					<th>total price</th>
+					<th>items after increase</th>
+					<th>each price</th>
+					<th>total price</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>{{ totalQ }}
+				</td>
+				<td>{{Beach}}
+				</td>
+				<td>{{totalP}}
+				</td>
+				<td>{{ totalNQ }}
+				</td>
+				<td>{{Aeach}}
+				</td>
+					<td>{{totalNP}}
+				</td>
+			</tr>
+		</table>
+	</div>
+{% endblock %}
