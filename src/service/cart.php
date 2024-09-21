@@ -28,7 +28,6 @@ class cart
 
     public function addProduct(product $product, int $quantitiy): mixed
     {
-        //fIND PRODUCT IN CART 
         $cartItem = $this->findCartItem($product->getId());
         if ($cartItem === null) {
             $cartItem = new cartItem($product, 0);
