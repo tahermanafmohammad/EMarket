@@ -51,28 +51,30 @@
 			<thead>
 				<tr>
 					<th>number of cart items</th>
-					<th colspan={{Beach|length}}>each price</th>
+					<th>each price</th>
 					<th>total price</th>
 					<th>items after increase</th>
-					<th colspan={{Aeach|length}}>each price</th>
+					<th>each price</th>
 					<th>total price</th>
 				</tr>
 			</thead>
 			<tr>
 				<td>{{ totalQ }}
 				</td>
-				{% for Beachs in Beach %}
-					<td>{{Beachs}}
-					</td>
-				{% endfor %}
+				<td>
+					{% for Beachs in Beach %}
+						{{Beachs}}
+					{% endfor %}
+				</td>
 				<td>{{totalP}}
 				</td>
 				<td>{{ totalNQ }}
 				</td>
-				{% for Aeachs in Aeach %}
-					<td>{{Aeachs}}
-					</td>
-				{% endfor %}
+				<td>
+					{% for Aeachs in Aeach %}
+						{{Aeachs}}
+					{% endfor %}
+				</td>
 				<td>{{totalNP}}
 				</td>
 			</tr>

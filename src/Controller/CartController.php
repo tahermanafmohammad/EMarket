@@ -11,6 +11,7 @@ use App\service\product;
 class CartController extends AbstractController
 {
     #[Route('/cart', name: 'app_cart', methods: ['GET'])]
+
     public function index(): Response
     {
         $product1 = new product(1, 'iphone', 2500, 10);
