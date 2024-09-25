@@ -2,6 +2,8 @@
 
 namespace App\service;
 
+use PhpParser\Node\Stmt\Echo_;
+
 class cart
 {
     private $items = [];
@@ -75,14 +77,28 @@ class cart
         return $totalSum;
     }
 
-    public function eachprice(): string
+    // public function eachprice(): string
+    // {
+    //     $x = "";
+    //     foreach ($this->items as $item) {
+    //         $i = $item->getproduct()->getTitle();
+    //         $x .= "  " . $i . "=" . $item->getQuantitiy() * $item->getproduct()->getPrice();
+    //     }
+    //     return $x;
+    // }
+
+    public function eachprice()
     {
-        $x = "";
+        $x = [];
+        $i = 0;
         foreach ($this->items as $item) {
-            $i = $item->getproduct()->getTitle();
-            $x .= "  " . $i . "=" . $item->getQuantitiy() * $item->getproduct()->getPrice();
+            $T = $item->getproduct()->getTitle();
+            $P = $item->getQuantitiy() * $item->getproduct()->getPrice();
+            $x[$i] = $T . "=" . $P;
+            $i++;
         }
-        return $x;
+        $ee = $x;
+        return $ee;
     }
 }
 

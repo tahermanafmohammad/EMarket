@@ -38,12 +38,10 @@
 		.content-table th,
 		.content-table td {
 			padding: 12px 15px;
-				border-style: groove;
+			border-style: groove;
 		}
 
-		.content-table td {
-		
-		}
+		.content-table td {}
 	</style>
 
 	<div class="example-wrapper">
@@ -53,25 +51,29 @@
 			<thead>
 				<tr>
 					<th>number of cart items</th>
-					<th>each price</th>
+					<th colspan={{Beach|length}}>each price</th>
 					<th>total price</th>
 					<th>items after increase</th>
-					<th>each price</th>
+					<th colspan={{Aeach|length}}>each price</th>
 					<th>total price</th>
 				</tr>
 			</thead>
 			<tr>
 				<td>{{ totalQ }}
 				</td>
-				<td>{{Beach}}
-				</td>
+				{% for Beachs in Beach %}
+					<td>{{Beachs}}
+					</td>
+				{% endfor %}
 				<td>{{totalP}}
 				</td>
 				<td>{{ totalNQ }}
 				</td>
-				<td>{{Aeach}}
-				</td>
-					<td>{{totalNP}}
+				{% for Aeachs in Aeach %}
+					<td>{{Aeachs}}
+					</td>
+				{% endfor %}
+				<td>{{totalNP}}
 				</td>
 			</tr>
 		</table>
