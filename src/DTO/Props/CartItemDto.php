@@ -1,13 +1,15 @@
 <?php
 
-namespace App\service;
+namespace App\DTO\Props;
 use Exception;
-class cartItem
-{
-    private product $product;
-    private int $quantitiy;
 
-    public function __construct(product $product, int $quantitiy)
+class CartItemDto
+{
+
+    private ProductDto $product;
+    public int $quantitiy;
+
+    public function __construct(ProductDto $product, int $quantitiy)
     {
         $this->product = $product;
         $this->quantitiy = $quantitiy;
@@ -16,7 +18,7 @@ class cartItem
     /**
      * Get the value of quantitiy
      */
-    public function getQuantitiy()
+    public function getQuantitiy(): int
     {
         return $this->quantitiy;
     }
@@ -36,7 +38,7 @@ class cartItem
     /**
      * Get the value of product
      */
-    public function getProduct()
+    public function getProduct(): ProductDto
     {
         return $this->product;
     }
@@ -55,17 +57,21 @@ class cartItem
 
     public function increaseQuantity(int $amount = 1): void
     {
+
         if ($this->getQuantitiy() + $amount > $this->getProduct()->getAvilableQuantity()) {
             throw new Exception('you cant add more than' . $this->getproduct()->getAvilableQuantity());
         }
+
         $this->quantitiy += $amount;
     }
 
     public function dcreaseQuantity(int $amount = 1): void
     {
+
         if ($this->getQuantitiy() - $amount < 1) {
             throw new Exception('product quatitiy can not be less than 1 ');
         }
+
         $this->quantitiy -= $amount;
     }
 }

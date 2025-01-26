@@ -1,16 +1,18 @@
 <?php
 
-namespace App\service;
-class product
-{
-    private $id = 0;
-    private $title = "";
-    private $price = 0;
-    private $avilableQuantity = 0;
+namespace App\DTO\Props;
 
-    public function __construct($id, $title, $price, $avilableQuantity)
+class ProductDto
+{
+
+    private int $Id = 0;
+    private string $title = "";
+    private float $price = 0;
+    private int $avilableQuantity = 0;
+
+    public function __construct(int $id, string $title, float $price, int $avilableQuantity)
     {
-        $this->id = $id;
+        $this->Id = $id;
         $this->title = $title;
         $this->price = $price;
         $this->avilableQuantity = $avilableQuantity;
@@ -81,7 +83,7 @@ class product
      */
     public function getId()
     {
-        return $this->id;
+        return $this->Id;
     }
 
     /**
@@ -91,18 +93,8 @@ class product
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->Id = $id;
 
         return $this;
-    }
-
-    public function addTocart(cart $cart, int $quantity)
-    {
-        return $cart->addProduct($this, $quantity);
-    }
-
-    public function removefromCart(cart $cart)
-    {
-        return $cart->removeProduct($this);
     }
 }

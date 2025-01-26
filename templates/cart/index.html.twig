@@ -5,11 +5,15 @@
 
 {% block body %}
 	<style>
+
 		body {
+
 			background-COLOR: #FFFFFF;
+			background-image: url("/Img/cartimag.jpg");
 		}
 
 		.example-wrapper {
+
 			margin: 1em auto 1em 350px;
 			max-width: 800px;
 			width: 95%;
@@ -17,11 +21,13 @@
 		}
 
 		.example-wrapper code {
+
 			background: #F5F5F5;
 			padding: 2px 5px;
 		}
 
 		.content-table {
+
 			border-spacing: 0;
 			margin: 25px 0;
 			font-size: 0.9em;
@@ -29,6 +35,7 @@
 		}
 
 		.content-table thead tr {
+
 			background-color: #099879;
 			color: #ffffff;
 			text-align: left;
@@ -37,45 +44,82 @@
 
 		.content-table th,
 		.content-table td {
+
 			padding: 12px 15px;
 			border-style: groove;
 		}
 
-		.content-table td {}
+		.Quantity {
+
+			background-color: #099879;
+			margin-right: 550px;
+			color: #ffffff;
+			border-style: groove;
+			border-radius: 5px 5px 0 0;
+			border-color: black;
+		}
+
+		.price {
+
+			background-color: #099879;
+			margin-right: 550px;
+			color: #ffffff;
+			border-style: groove;
+			border-radius: 5px 5px 0 0;
+			border-color: black;
+		}
 	</style>
 
 	<div class="example-wrapper">
+
 		<h1>{{ cart }}! ✅</h1>
+
+		<h3 class="Quantity">number of cart items =
+			{{totalQuantitiy}}
+		</h3>
+
+		<h3 class="price">
+			The Total Price =
+			{{totalPrice}}$
+		</h3>
 
 		<table class="content-table">
 			<thead>
 				<tr>
-					<th>number of cart items</th>
-					<th>each price</th>
-					<th>total price</th>
-					<th>items after increase</th>
-					<th>each price</th>
-					<th>total price</th>
+					<th>id</th>
+					<th>Title</th>
+					<th>
+						price</th>
+					<th>Quantitiy</th>
+					<th>Final price</th>
 				</tr>
 			</thead>
 			<tr>
-				<td>{{ totalQ }}
+				<td>{{ idFirstItem }}
 				</td>
 				<td>
-					{% for Beachs in Beach %}
-						{{Beachs}}
-					{% endfor %}
+					{{TitleFirstItem}}
 				</td>
-				<td>{{totalP}}
+				<td>{{PriceFirstItem}}
 				</td>
-				<td>{{ totalNQ }}
+				<td>{{ QuantitiyFirstItem }}
 				</td>
 				<td>
-					{% for Aeachs in Aeach %}
-						{{Aeachs}}
-					{% endfor %}
+					{{finalPriceFirstItem}}
 				</td>
-				<td>{{totalNP}}
+			</tr>
+			<tr>
+				<td>{{ id2Item }}
+				</td>
+				<td>
+					{{Title2Item}}
+				</td>
+				<td>{{Price2Item}}
+				</td>
+				<td>{{ Quantity2Item }}
+				</td>
+				<td>
+					{{finalPrice2Item}}
 				</td>
 			</tr>
 		</table>
